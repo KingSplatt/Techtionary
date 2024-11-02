@@ -43,9 +43,10 @@ const Camara = () => {
                 .resizeNearestNeighbor([224, 224])
                 .toFloat()
                 .expandDims();
+
             const prediction = await model.predict(tImg).data();
 
-            const clases = ['Auxiliar', 'Cable de audio RCA', 'Cable coaxial', 'Unidad central de procesamiento (CPU)', 'Disipador', 'Cable DisplayPort', 'Cable DVI', 'Ethernet', 'HDMI', 'Lightning', 'Micro USB', 'Unidad de fuente de alimentación (PSU)', 'Puerto USB A', 'RAM', 'SATA', 'Tarjeta de video', 'Tarjeta madre', 'Teclado', 'USB Tipo A', 'USB Tipo B', 'USB Tipo C', 'VGA', 'Mouse'];
+            const clases = ["Auxiliar", "Cable de audio RCA", "Cable coaxial", "Unidad central de procesamiento (CPU)", "Disipador", "Cable DisplayPort", "Cable DVI", "Ethernet", "HDMI", "Lightning", "Micro USB", "Unidad de fuente de alimentación (PSU)", "Puerto USB A", "RAM", "SATA", "Tarjeta de video", "Tarjeta madre", "Teclado", "USB Tipo A", "USB Tipo B", "USB Tipo C", "VGA", "Mouse"];
 
 
             console.log('Probabilidades de cada clase:');
