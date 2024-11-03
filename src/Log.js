@@ -22,7 +22,7 @@ const Log = () => {
                         </section>
                     </section>
                     <section id="secc02">
-                        <article>
+                        <article id="contieneCamara">
                             <Camara />
                         </article>
                     </section>

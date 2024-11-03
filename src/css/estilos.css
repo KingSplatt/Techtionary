@@ -4,23 +4,22 @@ html {
 }
 
 body {
-
     background: #f5f5f5;
     font-family: var(--font);
-    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-
+    margin: 0px auto;
+    padding: 0px;
+    width: 1920px;
 }
 
 header {
     background-color: #4b0082;
     color: white;
-
     font-size: 1.5rem;
     width: 100%;
+    height: auto;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -29,9 +28,8 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    width: 90vw;
-    max-width: 480px;
+    align-items: first baseline;
+    width: 100%;
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -47,6 +45,11 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+#secc02 {
+    width: 100%;
+    border-radius: 8px;
+}
+
 #condos {
     display: flex;
     justify-content: space-around;
@@ -54,50 +57,73 @@ header {
     background-color: #4b0082;
 }
 
+#condos section {
+    width: 100%;
+}
+
 #condos section input[type="button"] {
     padding: 12px;
     background-color: #4b0082;
     color: white;
     border: none;
-    border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
+    width: 100%;
+    transition: 1s;
 }
 
 #condos section input[type="button"]:hover {
     background-color: #6a0dad;
+    transition: 1s;
 }
 
-#secc02 {
+#contieneCamara {
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-
-    background-color: #f0f0f0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-flow: row wrap;
 }
 
-article {
-    width: 100%;
-    max-width: 400px;
-    background-color: #2f2f2f;
-    border-radius: 8px;
-    padding: 15px;
-}
-
-button {
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #4b0082;
+#capturar {
+    position: relative;
+    top: -50px;
+    left: 50px;
+    padding: 12px;
+    background: none;
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 1rem;
     cursor: pointer;
-    width: 100%;
+    font-size: 1rem;
+    border: 1px solid white;
 }
+
+#cambiarCamara {
+    position: relative;
+    top: -50px;
+    left: 50px;
+    padding: 12px;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#mainCamara {
+    width: 100%;
+    margin: 0px auto;
+}
+
+
+article {
+    width: 100%;
+    background-color: #4e4d4d;
+    padding: 15px;
+}
+
+
 
 button:hover {
     background-color: #6a0dad;
@@ -105,19 +131,160 @@ button:hover {
 
 .webcam {
     width: 100%;
-    height: 100%;
-    border-radius: 8px;
 }
 
 
-@media (max-width: 768px) {
+
+@media (max-width: 1920px) {
+    body {
+        width: 100vw;
+    }
+
     #contenedor {
-        padding: 10px;
+        width: 100%;
+    }
+
+    #secc1 {
+        width: 100%;
+    }
+
+    #secc02 {
+        width: 100%;
+        height: 844px;
     }
 
     #condos section input[type="button"] {
         width: 100%;
         margin-bottom: 10px;
+    }
+
+    #contieneCamara {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        height: 100%;
+    }
+
+    #mainCamara {
+        width: 100%;
+        height: 90%;
+    }
+
+    #capturar {
+        position: relative;
+        top: -50px;
+        left: 800px;
+        padding: 12px;
+        background: none;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+        border: 1px solid white;
+    }
+
+    #cambiarCamara {
+        position: relative;
+        top: -50px;
+        left: 850px;
+        padding: 12px;
+        background: none;
+        color: white;
+        border: 1px solid white;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .webcam {
+        width: 100%;
+        height: 85%;
+        max-width: 1920px;
+        max-height: 1024px;
+        position: relative;
+        overflow-x: hidden;
+        object-fit: cover;
+        margin: -15px -15px -25px -15px;
+
+    }
+
+    article {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        width: 100vw;
+        overflow: hidden;
+    }
+
+    #contenedor {
+        width: 100%;
+    }
+
+    #secc1 {
+        width: 100%;
+    }
+
+    #secc02 {
+        width: 100%;
+        height: 844px;
+    }
+
+    #condos section input[type="button"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #contieneCamara {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        height: 100%;
+    }
+
+    #mainCamara {
+        width: 100%;
+        height: 100%;
+    }
+
+    #capturar {
+        position: relative;
+        top: -250px;
+        left: 50px;
+        padding: 12px;
+        background: none;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+        border: 1px solid white;
+    }
+
+    #cambiarCamara {
+        position: relative;
+        top: -250px;
+        left: 50px;
+        padding: 12px;
+        background: none;
+        color: white;
+        border: 1px solid white;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .webcam {
+        justify-self: center;
+        align-self: center;
+        margin: -15px -15px -25px -15px;
+        width: 100%;
+        minScreenshotHeight: 100%;
+        minScreenshotWidth: 100%;
+
     }
 
     article {

@@ -1,6 +1,7 @@
 import * as tf from '@tensorflow/tfjs';
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import Webcam from "react-webcam";
+import "./css/estilos.css";
 
 const Camara = () => {
     const webcamRef = useRef(null);
@@ -67,7 +68,7 @@ const Camara = () => {
     };
 
     return (
-        <div>
+        <div id='mainCamara'>
             <Webcam
                 key={facingMode}
                 audio={false}
@@ -75,10 +76,10 @@ const Camara = () => {
                 screenshotFormat="image/jpeg"
                 videoConstraints={{ facingMode }}
                 className="webcam"
-                mirrored={true}
+                mirrored={false}
             />
-            <button onClick={capture}>Capturar</button>
-            <button onClick={toggleFacingMode}>Cambiar Cámara</button>
+            <button onClick={capture} id='capturar'>Capturar</button>
+            <button onClick={toggleFacingMode} id='cambiarCamara'>Cambiar Cámara</button>
 
             <div>
                 {predictions.map((prediction, i) => (
