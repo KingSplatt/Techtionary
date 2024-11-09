@@ -58,11 +58,13 @@
     #cambiarCamara {
         position: relative;
         top: -600px;
-        left: 1650px;
+        left: 1740px;
+        /*left aqui cambie*/
         padding: 12px;
         background: none;
         color: white;
-        border: 1px solid white;
+        /* border: 1px solid white;*/
+        /*comente esta linea*/
         border-radius: 8px;
         cursor: pointer;
         font-size: 1rem;
@@ -459,12 +461,15 @@
 
         #cambiarCamara {
             position: relative;
-            top: -450px;
-            left: 130px;
+            top: -470px;
+            /*cambie el top*/
+            left: 240px;
+            /*cambie el left*/
             padding: 12px;
             background: none;
             color: white;
-            border: 1px solid white;
+            border: none;
+            /* quite el border */
             border-radius: 8px;
             cursor: pointer;
             font-size: 1rem;

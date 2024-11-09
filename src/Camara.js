@@ -3,8 +3,11 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import Webcam from "react-webcam";
 import "./css/estilos.css";
 
+import { FaCamera, FaSyncAlt } from "react-icons/fa";
+
 const Camara = () => {
     const webcamRef = useRef(null);
+    const dialogRef = useRef(null);
     const [model, setModel] = useState(null);
     const [facingMode, setFacingMode] = useState("user");
     const [predictions, setPredictions] = useState([]);
@@ -63,8 +66,14 @@ const Camara = () => {
             console.log('Clase con mayor probabilidad:');
             console.log({ className: maxClass, probability: maxPrediction });
 
+            dialogRef.current.showModal();
 
         }
+    };
+
+    // Cerrar el modal
+    const closeModal = () => {
+        dialogRef.current.close();
     };
 
     return (
@@ -78,19 +87,20 @@ const Camara = () => {
                 className="webcam"
                 mirrored={false}
             />
-            <button onClick={capture} id='capturar'>Capturar</button>
-            <button onClick={toggleFacingMode} id='cambiarCamara'>Cambiar Cámara</button>
+            <button onClick={capture} id='capturar'><FaCamera />  Capturar </button>
+            <button onClick={toggleFacingMode} id='cambiarCamara'><FaSyncAlt /></button>
 
-            <div>
-                {predictions.map((prediction, i) => (
-                    <div key={i}>
-                        <p style={{ color: "#ffffff" }}>{prediction.className}</p>
-                        <p style={{ color: "#ffffff" }}>{(prediction.probability * 100).toFixed(2)}%</p>
-                    </div>
-                ))}
-            </div>
-
-
+            <dialog ref={dialogRef} className="modal">
+                <div className="modal-content">
+                    <button className="close" onClick={closeModal}>×</button>
+                    {predictions.map((prediction, i) => (
+                        <div key={i}>
+                            <p>{prediction.className}</p>
+                            <p>{(prediction.probability * 100).toFixed(2)}%</p>
+                        </div>
+                    ))}
+                </div>
+            </dialog>
 
         </div>
     );
