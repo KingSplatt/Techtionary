@@ -15,7 +15,8 @@ const Camara = () => {
     // Cargar el modelo
     useEffect(() => {
         const loadModel = async () => {
-            const modelURL = `${process.env.PUBLIC_URL}/model/model.json`;
+            // const modelURL = `${process.env.PUBLIC_URL}/model/model.json`;
+            const modelURL = `${process.env.PUBLIC_URL}/model2/model.json`;
             const loadedModel = await tf.loadLayersModel(modelURL);
             setModel(loadedModel);
         };
@@ -50,8 +51,9 @@ const Camara = () => {
 
             const prediction = await model.predict(tImg).data();
 
-            const clases = ["Auxiliar", "Cable de audio RCA", "Cable coaxial", "Unidad central de procesamiento (CPU)", "Disipador", "Cable DisplayPort", "Cable DVI", "Ethernet", "HDMI", "Lightning", "Micro USB", "Unidad de fuente de alimentación (PSU)", "Puerto USB A", "RAM", "SATA", "Tarjeta de video", "Tarjeta madre", "Teclado", "USB Tipo A", "USB Tipo B", "USB Tipo C", "VGA", "Mouse"];
+            // const clases = ["Auxiliar", "Cable de audio RCA", "Cable coaxial", "Unidad central de procesamiento (CPU)", "Disipador", "Cable DisplayPort", "Cable DVI", "Ethernet", "HDMI", "Lightning", "Micro USB", "Unidad de fuente de alimentación (PSU)", "Puerto USB A", "RAM", "SATA", "Tarjeta de video", "Tarjeta madre", "Teclado", "USB Tipo A", "USB Tipo B", "USB Tipo C", "VGA", "Mouse"];
 
+            const clases = ["Cable tipo barril", "Bateria", "Cable Doble Barril", "Ethernet", "HDMI", "HDMI (Entrada)", "Jack de audio", "MicroSD", "USB Micro usb", "USB A", "USB C", "Procesador", "Mouse", "Teclado"]
 
             console.log('Probabilidades de cada clase:');
             clases.forEach((clase, i) => {
