@@ -9,11 +9,13 @@ const Log = () => {
 
     const activarCamara = () => {
         setMostrarCamara(true);
+        window.scrollTo(0, 0);
         document.body.style.overflow = 'hidden';
     };
     const desactivarCamara = () => {
         setMostrarCamara(false);
-        document.body.style.overflow = 'visible';
+        document.body.style.overflowY = 'visible';
+        document.body.style.overflowX = 'hidden';
     };
 
     return (

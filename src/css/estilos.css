@@ -1,6 +1,7 @@
 html {
     --font: "Roboto", sans-serif;
     font-size: 16px;
+    overflow-x: hide;
 }
 
 p {
@@ -168,6 +169,7 @@ dialog::backdrop {
 }
 
 .card {
+    display:flex;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
     transition: 0.3s;
     border-radius: 5px;
@@ -189,9 +191,12 @@ dialog::backdrop {
         1px -1px 0 #00000065, 
         -1px 1px 0 #00000065, 
         1px 1px 0 #00000065;  
+    flex: 1;
   }
 
   .imgCard {
-    border-radius: 5px 5px 0 0;
-    width: 100%;
+    width: 30%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px 0px 0px 5px;
   }
