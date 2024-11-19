@@ -200,3 +200,11 @@ dialog::backdrop {
     object-fit: cover;
     border-radius: 5px 0px 0px 5px;
   }
+
+  #searchBar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
