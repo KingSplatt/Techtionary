@@ -177,6 +177,9 @@ dialog::backdrop {
     margin: 10px 0 10px 0px;
     width: calc(100% - 30px);
     box-sizing: border-box;
+    align-items: flex;
+    align-items: stretch;
+    padding: 16px;
   }
   
   .card:hover {
@@ -192,6 +195,9 @@ dialog::backdrop {
         -1px 1px 0 #00000065, 
         1px 1px 0 #00000065;  
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .imgCard {
@@ -202,9 +208,8 @@ dialog::backdrop {
   }
 
   #searchBar {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    font-size: 16px;
-  }
-  
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
